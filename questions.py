@@ -17,17 +17,17 @@ el cambio."""
 
 
 import random
-words = [
-"python",
-"programa",
-"variable",
-"funcion",
-"bucle",
-"cadena",
-"entero",
-"lista",
-]
-word = random.choice(words)
+words = {
+    "estructuras": ["cadena", "entero", "lista"],
+    "partes": ["funcion", "bucle", "variable"],
+    "global": ["python", "programa", "github"]  # Agregué "github" como mencionaste
+}
+print("Categorías disponibles:", list(words.keys()))
+categoria = input("Elige una categoría: ")
+while categoria not in words:
+    print("Categoría inválida. Elige de:", list(words.keys()))
+    categoria = input("Elige una categoría: ")
+word = random.choice(words[categoria])
 guessed = []
 attempts = 6
 puntaje = 0
